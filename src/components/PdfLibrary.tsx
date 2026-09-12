@@ -14,7 +14,8 @@ import {
   StickyNote, 
   Download,
   Eye,
-  Trash2
+  Trash2,
+  ArrowLeft
 } from 'lucide-react';
 import { PdfDocument } from '@/types';
 
@@ -47,6 +48,19 @@ export const PdfLibrary: React.FC<PdfLibraryProps> = ({
   const [newTags, setNewTags] = useState('');
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Close viewer on Escape key
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveViewerDoc(null);
+      }
+    };
+    if (activeViewerDoc) {
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [activeViewerDoc]);
 
   // All tags
   const allTags = React.useMemo(() => {
@@ -260,20 +274,29 @@ export const PdfLibrary: React.FC<PdfLibraryProps> = ({
           {/* Viewer Toolbar */}
           <div className="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800 bg-zinc-900">
             <div className="flex items-center space-x-3">
-              <div className="p-1.5 rounded bg-blue-500/20 text-blue-400">
+              <button
+                onClick={() => setActiveViewerDoc(null)}
+                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-xs font-medium transition-colors"
+                title="Go back to PDF Library (or press Esc)"
+              >
+                <ArrowLeft className="w-4 h-4 text-blue-400" />
+                <span>Back to Library</span>
+              </button>
+
+              <div className="p-1.5 rounded bg-blue-500/20 text-blue-400 hidden sm:block">
                 <FileText className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-zinc-100 truncate max-w-md">
+                <h3 className="text-sm font-semibold text-zinc-100 truncate max-w-xs md:max-w-md">
                   {isStealth ? 'Architecture Document: ' : ''}{activeViewerDoc.title}
                 </h3>
-                <span className="text-[10px] text-zinc-400">
+                <span className="text-[10px] text-zinc-400 hidden sm:block">
                   {isStealth ? 'Internal Browser Sandbox Reader' : 'In-Browser Sandbox PDF Viewer (Zero Download)'}
                 </span>
               </div>
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <button
                 onClick={() => setSplitNotesOpen(!splitNotesOpen)}
                 className={`flex items-center space-x-1 px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
@@ -284,7 +307,7 @@ export const PdfLibrary: React.FC<PdfLibraryProps> = ({
                 title="Toggle side-by-side study notes"
               >
                 <StickyNote className="w-3.5 h-3.5" />
-                <span>Study Notes</span>
+                <span className="hidden sm:inline">Study Notes</span>
               </button>
 
               <a
@@ -295,15 +318,16 @@ export const PdfLibrary: React.FC<PdfLibraryProps> = ({
                 title="Open in new native browser tab"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span>New Tab</span>
+                <span className="hidden sm:inline">New Tab</span>
               </a>
 
               <button
                 onClick={() => setActiveViewerDoc(null)}
-                className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
-                title="Close Viewer"
+                className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-rose-900/40 text-zinc-300 hover:text-rose-300 border border-zinc-700 hover:border-rose-500/40 text-xs font-medium transition-colors"
+                title="Close Viewer (or press Esc key)"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
+                <span>Close (Esc)</span>
               </button>
             </div>
           </div>
