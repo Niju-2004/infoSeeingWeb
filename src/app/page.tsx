@@ -41,8 +41,17 @@ export default function Home() {
   const [notes, setNotes] = useState('');
   const [isBackupOpen, setIsBackupOpen] = useState(false);
 
-  // Load from local storage on mount
   useEffect(() => {
+    // Restore active tab from URL hash or localStorage
+    const validTabs = ['leetcode', 'pdfs', 'youtube', 'whatsapp', 'notes'];
+    const hash = window.location.hash.replace('#', '');
+    const savedTab = localStorage.getItem('infoseeing_active_tab');
+    if (validTabs.includes(hash)) {
+      setActiveTab(hash);
+    } else if (savedTab && validTabs.includes(savedTab)) {
+      setActiveTab(savedTab);
+    }
+
     setProblems(loadLeetCodeProblems());
     setVideos(loadYouTubeVideos());
     const initialPdfs = loadPdfDocuments();
@@ -81,9 +90,32 @@ export default function Home() {
         });
       }
     };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    // Listen to hash changes (browser back/forward)
+    const handleHashChange = () => {
+      const currentHash = window.location.hash.replace('#', '');
+      if (validTabs.includes(currentHash)) {
+        setActiveTab(currentHash);
+        localStorage.setItem('infoseeing_active_tab', currentHash);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
+
+  const handleTabChange = (newTab: string) => {
+    setActiveTab(newTab);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('infoseeing_active_tab', newTab);
+      window.history.replaceState(null, '', `#${newTab}`);
+    }
+  };
 
   // Sync state helpers
   const handleToggleStealth = () => {
@@ -199,9 +231,9 @@ export default function Home() {
         settings={settings}
         onToggleStealth={handleToggleStealth}
         activeTab={activeTab}
-        onTabChange={setActiveTab}
+        onTabChange={handleTabChange}
         onOpenBackup={() => setIsBackupOpen(true)}
-        onOpenWhatsApp={() => setActiveTab('whatsapp')}
+        onOpenWhatsApp={() => handleTabChange('whatsapp')}
         stats={{
           totalProblems: problems.length,
           solvedProblems: solvedCount,
@@ -247,7 +279,7 @@ export default function Home() {
             onImportLeetCode={handleImportProblems}
             onImportVideos={handleImportVideos}
             onImportPdfs={handleImportPdfs}
-            onNavigateTab={setActiveTab}
+            onNavigateTab={handleTabChange}
             isStealth={settings.stealthMode}
           />
         )}
