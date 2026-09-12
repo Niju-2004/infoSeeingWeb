@@ -1,0 +1,96 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1996 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(Data Structures & Algorithms - Core Patterns & Cheatsheet) Tj
+/F1 11 Tf
+0 -24 Td
+(Curated study guide for technical coding interviews \(LeetCode / FAANG\)) Tj
+0 -25 Td
+(--------------------------------------------------------------------------------------------------) Tj
+0 -22 Td
+/F1 14 Tf
+(1. Two Pointers Pattern) Tj
+/F1 10 Tf
+0 -15 Td
+(Usage: Sorted arrays, searching pairs, palindromes, container with most water.) Tj
+0 -15 Td
+(Key Idea: Left and right pointers moving towards each other or at varying speeds.) Tj
+0 -15 Td
+(Time Complexity: O\(N\), Space Complexity: O\(1\).) Tj
+0 -15 Td
+(Classic Problems: 3Sum, Valid Palindrome, Two Sum II, Trapping Rain Water.) Tj
+0 -10 Td
+( ) Tj
+0 -22 Td
+/F1 14 Tf
+(2. Sliding Window Pattern) Tj
+/F1 10 Tf
+0 -15 Td
+(Usage: Subarrays/substrings meeting criteria \(maximum sum, longest without repeats\).) Tj
+0 -15 Td
+(Fixed Window: Advance right, subtract left once size exceeds k.) Tj
+0 -15 Td
+(Dynamic Window: Expand right to find valid window; shrink left until condition holds.) Tj
+0 -15 Td
+(Classic Problems: Longest Substring Without Repeating Characters, Min Window Substring.) Tj
+0 -10 Td
+( ) Tj
+0 -22 Td
+/F1 14 Tf
+(3. Fast and Slow Pointers \(Floyd Cycle Detection\)) Tj
+/F1 10 Tf
+0 -15 Td
+(Usage: Linked list cycle detection, finding middle of linked list, happy number.) Tj
+0 -15 Td
+(Key Idea: Slow advances 1 step, fast advances 2 steps. They meet if a loop exists.) Tj
+0 -15 Td
+(To find start of cycle: Reset slow to head, advance both by 1 step until they meet.) Tj
+0 -10 Td
+( ) Tj
+0 -22 Td
+/F1 14 Tf
+(4. Dynamic Programming Core Framework) Tj
+/F1 10 Tf
+0 -15 Td
+(Step 1: Define state \(what do indices dp[i][j] represent?\).) Tj
+0 -15 Td
+(Step 2: Find base cases \(smallest trivial subproblems\).) Tj
+0 -15 Td
+(Step 3: State transition recurrence \(decision tree choices\).) Tj
+0 -15 Td
+(Step 4: Space optimization \(e.g., reduce O\(N^2\) space to O\(N\) or O\(1\) if only last row needed\).) Tj
+0 -10 Td
+( ) Tj
+ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000002289 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2359
+%%EOF

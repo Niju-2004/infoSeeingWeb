@@ -1,0 +1,92 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1924 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(System Design Blueprint & Latency Numbers Handbook) Tj
+/F1 11 Tf
+0 -24 Td
+(Architecture guide for distributed systems and high-level design interviews) Tj
+0 -25 Td
+(--------------------------------------------------------------------------------------------------) Tj
+0 -22 Td
+/F1 14 Tf
+(1. Step-by-Step 45-Minute Interview Strategy) Tj
+/F1 10 Tf
+0 -15 Td
+(00-05 min: Scope Requirements \(Functional, Non-Functional, Read/Write ratio\).) Tj
+0 -15 Td
+(05-10 min: Capacity Estimation \(Storage over 5 years, QPS, Bandwidth\).) Tj
+0 -15 Td
+(10-25 min: High-Level Architecture \(API, Clients, LB, App Servers, DB, Cache\).) Tj
+0 -15 Td
+(25-40 min: Deep Dives \(Sharding key, Replication, Concurrency, Failure modes\).) Tj
+0 -15 Td
+(40-45 min: Bottlenecks & Wrap-Up \(SPOF, Monitoring, Metrics, Cost\).) Tj
+0 -10 Td
+( ) Tj
+0 -22 Td
+/F1 14 Tf
+(2. Latency Numbers Every Engineer Must Know) Tj
+/F1 10 Tf
+0 -15 Td
+(L1 cache reference: 0.5 ns | Branch mispredict: 5 ns) Tj
+0 -15 Td
+(L2 cache reference: 7 ns   | Mutex lock/unlock: 25 ns) Tj
+0 -15 Td
+(Main memory reference: 100 ns) Tj
+0 -15 Td
+(Read 1 MB sequentially from memory: 250,000 ns \(250 us\)) Tj
+0 -15 Td
+(SSD random read: 150 us | Read 1 MB sequentially from SSD: 1,000 us \(1 ms\)) Tj
+0 -15 Td
+(Round trip within same datacenter: 500 us \(0.5 ms\)) Tj
+0 -15 Td
+(Send packet California to Netherlands: 150,000 us \(150 ms\)) Tj
+0 -10 Td
+( ) Tj
+0 -22 Td
+/F1 14 Tf
+(3. Storage & Database Selection) Tj
+/F1 10 Tf
+0 -15 Td
+(Relational \(PostgreSQL, MySQL\): ACID transactions, structured schemas, complex joins.) Tj
+0 -15 Td
+(NoSQL Document \(MongoDB, DynamoDB\): Unstructured JSON, dynamic schema, high write scale.) Tj
+0 -15 Td
+(Wide-Column \(Cassandra, ScyllaDB\): Massive write throughput, time-series, append-only logs.) Tj
+0 -15 Td
+(In-Memory \(Redis\): Low latency \(<1ms\) caching, pub/sub, rate-limiting, session store.) Tj
+0 -10 Td
+( ) Tj
+ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000002217 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2287
+%%EOF

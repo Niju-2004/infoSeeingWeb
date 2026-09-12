@@ -1,0 +1,70 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1191 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(SQL Performance & Indexing Optimization Handbook) Tj
+/F1 11 Tf
+0 -24 Td
+(Deep dive into B-Trees, Execution Plans, and Query Tuning) Tj
+0 -25 Td
+(--------------------------------------------------------------------------------------------------) Tj
+0 -22 Td
+/F1 14 Tf
+(1. How B-Tree Indexes Work) Tj
+/F1 10 Tf
+0 -15 Td
+(B-Trees keep data sorted with O\(log N\) search, insertion, and deletion.) Tj
+0 -15 Td
+(Leftmost Prefix Rule: Index on \(A, B, C\) can satisfy queries on A, \(A,B\), and \(A,B,C\).) Tj
+0 -15 Td
+(It CANNOT satisfy queries on B or C alone without scanning the whole index.) Tj
+0 -15 Td
+(Avoid functions on indexed columns: WHERE UPPER\(email\) = ... disables direct index search.) Tj
+0 -10 Td
+( ) Tj
+0 -22 Td
+/F1 14 Tf
+(2. ACID & Transaction Isolation Levels) Tj
+/F1 10 Tf
+0 -15 Td
+(Read Uncommitted: Lowest isolation; allows dirty reads.) Tj
+0 -15 Td
+(Read Committed: Default in PostgreSQL; prevents dirty reads, allows non-repeatable reads.) Tj
+0 -15 Td
+(Repeatable Read: Prevents non-repeatable reads using MVCC snapshots.) Tj
+0 -15 Td
+(Serializable: Highest isolation; strictly ordered execution via predicate locks / SSI.) Tj
+0 -10 Td
+( ) Tj
+ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001484 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1554
+%%EOF

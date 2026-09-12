@@ -1,0 +1,70 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1306 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(Behavioral Interview Mastery - The STAR Method Framework) Tj
+/F1 11 Tf
+0 -24 Td
+(Structure answers for Leadership, Conflict Resolution, and Technical Ownership) Tj
+0 -25 Td
+(--------------------------------------------------------------------------------------------------) Tj
+0 -22 Td
+/F1 14 Tf
+(1. The STAR Technique Formula) Tj
+/F1 10 Tf
+0 -15 Td
+(S - Situation: Set the scene \(context, company, project size, 15% of time\).) Tj
+0 -15 Td
+(T - Task: What was the specific challenge or goal you needed to achieve \(10% of time\).) Tj
+0 -15 Td
+(A - Action: What did YOU specifically do? Technologies, decisions, pushback \(60% of time\).) Tj
+0 -15 Td
+(R - Result: Measurable impact \(latency dropped 40%, saved 20 hrs/week, zero downtime\).) Tj
+0 -10 Td
+( ) Tj
+0 -22 Td
+/F1 14 Tf
+(2. Top 5 Classic Question Categories) Tj
+/F1 10 Tf
+0 -15 Td
+(1. Disagreement with a tech lead or product manager: Focus on data, empathy, and win-win.) Tj
+0 -15 Td
+(2. Major production outage / critical bug: Focus on blameless post-mortem and prevention.) Tj
+0 -15 Td
+(3. Tight deadline with changing requirements: Focus on ruthless prioritization and communication.) Tj
+0 -15 Td
+(4. Mentoring or helping a struggling teammate: Focus on patience, pair programming, enablement.) Tj
+0 -10 Td
+( ) Tj
+ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001599 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1669
+%%EOF
