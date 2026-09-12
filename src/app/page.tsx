@@ -45,10 +45,30 @@ export default function Home() {
   useEffect(() => {
     setProblems(loadLeetCodeProblems());
     setVideos(loadYouTubeVideos());
-    setPdfs(loadPdfDocuments());
+    const initialPdfs = loadPdfDocuments();
+    setPdfs(initialPdfs);
     setSettings(loadSettings());
     setNotes(loadQuickNotes());
     setMounted(true);
+
+    // Auto-discover newly uploaded PDFs from public/materials
+    fetch('/api/materials')
+      .then(res => res.json())
+      .then(data => {
+        if (data.documents && Array.isArray(data.documents)) {
+          setPdfs(prev => {
+            const existingUrls = new Set(prev.map(d => d.url));
+            const newFromFolder = data.documents.filter((d: PdfDocument) => !existingUrls.has(d.url));
+            if (newFromFolder.length > 0) {
+              const combined = [...prev, ...newFromFolder];
+              savePdfDocuments(combined);
+              return combined;
+            }
+            return prev;
+          });
+        }
+      })
+      .catch(err => console.error('Failed to sync materials API', err));
 
     // Keyboard shortcut: Alt + S toggles stealth mode
     const handleKeyDown = (e: KeyboardEvent) => {
